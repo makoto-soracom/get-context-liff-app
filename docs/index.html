@@ -20,13 +20,24 @@
 </head>
 
 <body>
-<div id="modal"></div>
-<script>
-    liff.ready.then(() =>{
-        var elm = document.getElementById("modal");
-        elm.textContent = JSON.stringify(liff.getContext());
-    })
-</script>
+    <table>
+        <tr>
+            <th style="text-align:left;">User ID:</th>
+            <td id="userid">none</td>
+        </tr>
+        <tr>
+            <th style="text-align:left;">Group ID:</th>
+            <td id="groupid">none</td>
+        </tr>
+    </table>
+    <script>
+        liff.ready.then(() => {
+            var userid = document.getElementById("userid");
+            userid.textContent = liff.getContext().userId;
+            var groupid = document.getElementById("groupid");
+            groupid.textContent = liff.getContext().groupId;
+        })
+    </script>
 
 </body>
 
