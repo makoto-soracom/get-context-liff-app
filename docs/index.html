@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liff.getContext()</title>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            liff
+                .init({ liffId: "1656680120-la716qwN" || '' })
+                .then(() => {
+                    console.log("Success! you can do something with LIFF API here.")
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        });
+    </script>
+</head>
+
+<body>
+<div id="modal"></div>
+<script>
+    liff.ready.then(() =>{
+        var elm = document.getElementById("modal");
+        elm.textContent = JSON.stringify(liff.getContext());
+    })
+</script>
+
+</body>
+
+</html>
